@@ -13,7 +13,7 @@
 
 ## 1.2 NLP层次
 
-![20221021120433](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211228097.png)
+![202210211148572](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211237656.png)
 
 1. 输入源：语言、图像和文本（转化成文本）
 
