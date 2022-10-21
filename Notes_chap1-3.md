@@ -13,7 +13,7 @@
 
 ## 1.2 NLP层次
 
-![image-20221017162706616](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221017162706616.png)
+![20221021120433](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211228097.png)
 
 1. 输入源：语言、图像和文本（转化成文本）
 
@@ -49,7 +49,7 @@
 
 一些较好的模型和论文准确率对比：
 
-![image-20221017172135447](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221017172135447.png)
+![image-20221017172135447](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158014.png)
 
 ![img](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTencent%5CUsers%5C827228087%5CQQ%5CWinTemp%5CRichOle%5C0%7BL%60EKLI6PCL$TE03_%5D%5B%7DO0.png)
 
@@ -176,14 +176,14 @@ backward_segment('研究生命起源', dic) #研究，生命，起源
 - **基础信息**：蓝色节点标记结尾。空间利用率较低。<!--字典树其实就是确定有限状态自动机DFA。-->
 - **性能分析**：当词典大小为n时，最坏情况下字典树的复杂度是***O(logn)***（假设词语都是单字，且子节点用对数复杂度的数据结构存储），但实际速度比二分查找快。因为**前缀匹配是递进的过程**，算法不用比较字符串的前缀。
 
-![image-20221019201953339](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221019201953339.png)
+![image-20221019201953339](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158015.png)
 
 ### 2.2.2 BinTrie树（首字散列）
 
 - **提出动机**：Trie树速度慢，空间利用率低
 - **第一步修改**：仅在根节点散列，其余二分。
 
-![image-20221019202020490](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221019202020490.png)
+![image-20221019202020490](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158016.png)
 
 速度快了将近一倍，但仍有不足——没有发挥出前缀的妙用。
 
@@ -200,7 +200,7 @@ backward_segment('研究生命起源', dic) #研究，生命，起源
 
 <!--从根节点this开始顺序选择起点，然后递增i进行状态转移（if分支）；一旦状态转移失败（else分支），对以begin开头的词语扫描立即停止，bigin递增，最后重新开始新前缀的扫描。-->
 
-![image-20221019202328356](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221019202328356.png)
+![image-20221019202328356](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158017.png)
 
 e.g. 
 
@@ -249,15 +249,15 @@ DFA：当状态b接受字符c转移到状态p时，双数组满足以下条件�
 
 **（4）DFA构造**
 
-![image-20221019204112305](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221019204112305.png)
+![image-20221019204112305](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158018.png)
 
-![image-20221019204145404](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221019204145404.png)
+![image-20221019204145404](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158019.png)
 
-![image-20221019204205412](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221019204205412.png)
+![image-20221019204205412](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158020.png)
 
-![image-20221019204217703](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221019204217703.png)
+![image-20221019204217703](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158021.png)
 
-![image-20221019204233386](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221019204233386.png)
+![image-20221019204233386](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158022.png)
 
 相关双数组构造过程可见知乎文章：[DoubleArrayTrie（DAT）双数组字典树原理解读，golang/go语言实现 - 知乎 (zhihu.com) ](https://zhuanlan.zhihu.com/p/113262718)
 
@@ -273,7 +273,7 @@ ps.其中offset就是我们要自己填的base数组。base数组的构建是需
 
 - **提出动机**：DAT时间复杂度为***O(n^2)***。为使扫描的时间复杂度降为***O(n)***，提出AC自动机。
 
-![image-20221019211121360](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221019211121360.png)
+![image-20221019211121360](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158023.png)
 
 - **基础知识：**由goto表（前缀树但首字带自环）、fail表（后缀树）、output表组成。
 
@@ -281,19 +281,19 @@ e.g. 模式串为{he,his,she,hers}
 
 （1）goto表：
 
-![image-20221019212703257](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221019212703257.png)
+![image-20221019212703257](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158024.png)
 
 （2）output表：
 
-![image-20221019212732891](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221019212732891.png)
+![image-20221019212732891](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158025.png)
 
 （3）fail表
 
-![image-20221019212755022](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221019212755022.png)
+![image-20221019212755022](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158026.png)
 
-![image-20221019212825257](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221019212825257.png)
+![image-20221019212825257](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158027.png)
 
-![image-20221019212853698](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221019212853698.png)
+![image-20221019212853698](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158028.png)
 
 对过程做一下详细介绍说明：
 
@@ -350,7 +350,7 @@ fail表指针情况：                 9.fail=3
 - **提出动机：**DAT速度比AC自动机速度更快。但AC自动机处理多模式匹配问题不需要回退，只要一遍扫描（处理多模式匹配问题更好）；而DAT处理但模式匹配问题复杂度低为O(n)，多模式匹配时需要频繁回退，性能较低。所以将两者结合起来。
 - **构建方式：**
 
-![image-20221019222439135](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221019222439135.png)
+![image-20221019222439135](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158029.png)
 
 - **性能分析：**ACDAT≈DAT>AC>BinTrie。ACDAT≈DAT是因为汉语词汇都不太长，有的甚至是单字，这使得前缀树的优势占了较大的比重，AC自动机的fail机制用处较小。所以含有短模式串时优先使用DAT，否则优先使用ACDAT。当最短词长大于2时ACDAT优势比较明显。
 
@@ -358,7 +358,7 @@ fail表指针情况：                 9.fail=3
 
 ### 2.5.1 P/R/F1
 
-![image-20221019223942798](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221019223942798.png)
+![image-20221019223942798](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158030.png)
 
 精确率P=TP/TP+FP
 
@@ -380,7 +380,7 @@ TP = A ∩ B
 
 e.g.
 
-![image-20221019230128136](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221019230128136.png)
+![image-20221019230128136](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158031.png)
 
 ### 2.5.2 中文分词测评
 
@@ -402,23 +402,23 @@ e.g.
 
 **（1）原始语言模型**
 
-![image-20221020163359024](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221020163359024.png)
+![image-20221020163359024](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158032.png)
 
-![image-20221020163438206](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221020163438206.png)
+![image-20221020163438206](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158033.png)
 
 **问题：**
 
-![image-20221020163458617](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221020163458617.png)
+![image-20221020163458617](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158034.png)
 
 **（2）马尔科夫链与二元语法**
 
-![image-20221020163533634](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221020163533634.png)
+![image-20221020163533634](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158035.png)
 
-![image-20221020163552328](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221020163552328.png)
+![image-20221020163552328](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158036.png)
 
 **（3）n元语法与RNN**
 
-![image-20221020163630551](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221020163630551.png)
+![image-20221020163630551](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158037.png)
 
 **（4）数据稀疏与平滑策略**
 
@@ -466,13 +466,13 @@ def train_bigram(corpus_path, model_path):
     maker.saveTxtTo(model_path)  # tests/data/my_cws_model.txt
 ```
 
-![image-20221020164742128](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221020164742128.png)
+![image-20221020164742128](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158038.png)
 
 <!--这里词性是没有用的-->
 
 3. 统计二元语法
 
-![image-20221020165010882](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221020165010882.png)
+![image-20221020165010882](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158039.png)
 
 ## 3.3 模型预测
 
@@ -754,15 +754,15 @@ def generate_wordnet(sent, trie):
     return wordnet
 ```
 
-![image-20221020235338763](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221020235338763.png)
+![image-20221020235338763](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158040.png)
 
-![image-20221020235349174](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221020235349174.png)
+![image-20221020235349174](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158041.png)
 
 **相关详细词网构建可参考**：[HanLP分词研究 - 大熊猫同学 - 博客园 (cnblogs.com)](https://www.cnblogs.com/hapjin/p/11172299.html) （由于语料库的不同，我的单词被舍去，商、品、服等，但链接中留下了）
 
 ## 3.5 节点距离计算
 
-![image-20221020235626192](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221020235626192.png)
+![image-20221020235626192](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158042.png)
 
 ```java
     public static double calculateWeight(Vertex from, Vertex to)
@@ -784,7 +784,7 @@ def generate_wordnet(sent, trie):
     }
 ```
 
-![image-20221021000204832](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221021000204832.png)
+![image-20221021000204832](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158043.png)
 
 ## 3.6 维特比算法
 
@@ -953,7 +953,7 @@ HanLP的所有分词器都支持用户字典，也就是说，允许用户自己
 
 **且支持两档用户词典优先级**：
 
-![image-20221021111113574](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221021111113574.png)
+![image-20221021111113574](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158045.png)
 
 也就是说，低优先级下，分词器首先按照没有用户词典的情况下预测分词结果，再将结果按照用户词典合并。
 
@@ -961,9 +961,9 @@ HanLP的所有分词器都支持用户字典，也就是说，允许用户自己
 
 ### 3.7.2 模型测评
 
-![image-20221021111929789](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221021111929789.png)
+![image-20221021111929789](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158046.png)
 
-![image-20221021112118478](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221021112118478.png)
+![image-20221021112118478](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158047.png)
 
 ### 3.7.3 模型调整
 
@@ -973,15 +973,15 @@ HanLP的所有分词器都支持用户字典，也就是说，允许用户自己
 
 - 3.7.2中前四个样本都可以用过用户词典来弥补。
 
-![image-20221021112224384](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221021112224384.png)
+![image-20221021112224384](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158048.png)
 
 - 3.7.2中第五个样本不可以通过一元语法词典解决。因为“输、气、管道”三个词语已经在核心词典里，只是没有被输出。追踪一下分词过程：
 
-![image-20221021112439988](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221021112439988.png)
+![image-20221021112439988](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158049.png)
 
 
 
-![image-20221021113405451](C:%5CUsers%5C%E4%B8%AD%E5%8D%97%E5%AE%89%E7%90%AA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221021113405451.png)
+![image-20221021113405451](https://cdn.jsdelivr.net/gh/Ga7777/Notes_NLPbook/imgs/202210211158050.png)
 
 <!--模型调整的负面影响：人工新增二元语法的时候一元语法并没有得到更新，用户指定的频次也未必符合统计规律，可能产生一些副作用。总之除非万不得已，否则尽量用预料标注与统计方法解决问题。-->
 
